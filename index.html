@@ -3,427 +3,778 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- ══════════════════════════════════════════
-    HOW TO USE THIS TEMPLATE
-    Search for "✏️ EDIT" — every line you need
-    to change is marked with that label.
-    You only need to edit this one file!
-  ══════════════════════════════════════════ -->
-
-  <!-- ✏️ EDIT: Change to your name and role -->
-  <title>Your Name | PhD Student</title>
-  <meta name="description" content="Academic homepage of Your Name">
+  <title>Yifan Yang | GeoAI and GIScience</title>
+  <meta
+    name="description"
+    content="Academic homepage of Yifan Yang, PhD student in Geography at Texas A&amp;M University working on GeoAI, disaster resilience, multimodal AI, and GIScience."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 
   <style>
-    /* ─── Design tokens ─────────────────────── */
     :root {
-      --navy:   #1a2e4a;
-      --teal:   #0ea5e9;
-      --green:  #22c55e;
-      --bg:     #f8fafc;
-      --white:  #ffffff;
-      --text:   #1e293b;
-      --muted:  #64748b;
-      --border: #e2e8f0;
-      --shadow: 0 1px 3px rgba(0,0,0,.10), 0 1px 2px rgba(0,0,0,.06);
+      --ink: #10213b;
+      --ink-soft: #203c62;
+      --sky: #0f80c8;
+      --gold: #d7a13b;
+      --mist: #eef4fb;
+      --paper: #ffffff;
+      --line: #dbe6f0;
+      --text: #1f2e41;
+      --muted: #5e7087;
+      --shadow: 0 18px 45px rgba(16, 33, 59, 0.1);
     }
 
-    /* ─── Reset ─────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
+      font-family: "Manrope", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(215, 161, 59, 0.18), transparent 28%),
+        linear-gradient(180deg, #f6f9fd 0%, #eef4fb 100%);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.7;
     }
+    a { color: inherit; }
 
-    /* ─── Navigation ─────────────────────────── */
     nav {
-      background: var(--navy);
-      position: sticky; top: 0; z-index: 100;
-      height: 54px;
-      display: flex; align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(16, 33, 59, 0.9);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.95rem 1.5rem;
+      display: flex;
+      align-items: center;
       justify-content: space-between;
-      padding: 0 2rem;
+      gap: 1rem;
     }
     .nav-name {
-      color: #fff; font-weight: 600; font-size: 1rem;
-      letter-spacing: .02em; white-space: nowrap;
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-decoration: none;
     }
-    .nav-links { display: flex; gap: .15rem; list-style: none; }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
     .nav-links a {
-      color: rgba(255,255,255,.72); text-decoration: none;
-      padding: .35rem .7rem; border-radius: 5px;
-      font-size: .875rem; transition: all .18s;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-size: 0.92rem;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      transition: 0.2s ease;
     }
-    .nav-links a:hover { color: #fff; background: rgba(255,255,255,.12); }
+    .nav-links a:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.09);
+    }
 
-    /* ─── Hero ───────────────────────────────── */
     .hero {
-      background: var(--navy);
-      padding: 3.5rem 2rem 3rem;
+      padding: 4.5rem 1.5rem 3rem;
     }
-    .hero-inner {
-      max-width: 840px; margin: 0 auto;
-      display: flex; gap: 2.5rem; align-items: center;
-    }
-
-    /* Profile photo — shows initials if no photo is set */
-    .avatar {
-      width: 130px; height: 130px; flex-shrink: 0;
-      border-radius: 50%;
-      background: var(--teal);
-      border: 3px solid rgba(255,255,255,.2);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2.8rem; font-weight: 700; color: #fff;
+    .hero-shell {
+      max-width: 1100px;
+      margin: 0 auto;
+      background:
+        linear-gradient(140deg, rgba(16, 33, 59, 0.97), rgba(15, 128, 200, 0.86)),
+        linear-gradient(180deg, #10213b 0%, #1a3d67 100%);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
       overflow: hidden;
     }
-    /* If you add a photo: uncomment and set src in the <img> below */
-    .avatar img { width: 100%; height: 100%; object-fit: cover; }
-
-    .hero-text h1 { font-size: 2.3rem; font-weight: 700; color: #fff; }
-    .hero-text .position { font-size: 1.05rem; color: var(--teal); font-weight: 500; margin-top: .25rem; }
-    .hero-text .university { font-size: .9rem; color: rgba(255,255,255,.6); margin-top: .2rem; }
-
-    .hero-links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.2rem; }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2rem;
+      padding: 3rem;
+      align-items: center;
+    }
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 3px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.22);
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .eyebrow {
+      color: rgba(255, 255, 255, 0.72);
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      color: #fff;
+      font-size: 4rem;
+      line-height: 0.95;
+      margin-bottom: 0.7rem;
+    }
+    .hero .position {
+      font-size: 1.2rem;
+      color: #f3f8ff;
+      font-weight: 700;
+    }
+    .hero .institution {
+      color: rgba(255, 255, 255, 0.78);
+      margin-top: 0.35rem;
+      font-size: 1rem;
+    }
+    .hero .summary {
+      color: rgba(255, 255, 255, 0.86);
+      max-width: 760px;
+      margin-top: 1.15rem;
+      font-size: 1.02rem;
+    }
+    .hero-links,
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.3rem;
+    }
+    .hero-links a,
+    .hero-stats span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.6rem 0.95rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
     .hero-links a {
-      display: inline-flex; align-items: center; gap: .35rem;
-      padding: .35rem .85rem; border-radius: 20px;
-      border: 1px solid rgba(255,255,255,.28);
-      color: rgba(255,255,255,.82); text-decoration: none;
-      font-size: .825rem; transition: all .18s;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+      transition: 0.2s ease;
     }
-    .hero-links a:hover { background: rgba(255,255,255,.1); color: #fff; border-color: rgba(255,255,255,.5); }
+    .hero-links a:hover {
+      background: rgba(255, 255, 255, 0.16);
+      transform: translateY(-1px);
+    }
+    .hero-links a.primary {
+      background: #fff;
+      color: var(--ink);
+    }
+    .hero-stats span {
+      color: rgba(255, 255, 255, 0.92);
+      background: rgba(5, 13, 24, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
 
-    /* ─── Main layout ────────────────────────── */
-    main { max-width: 840px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
-
-    section { margin-bottom: 3rem; }
-
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+    section {
+      margin-top: 2.4rem;
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: 0 16px 35px rgba(16, 33, 59, 0.05);
+    }
     h2 {
-      font-size: 1.4rem; font-weight: 700; color: var(--navy);
-      padding-bottom: .45rem;
-      border-bottom: 2.5px solid var(--teal);
-      display: inline-block;
-      margin-bottom: 1.25rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.25rem;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .section-intro {
+      color: var(--muted);
+      margin-bottom: 1.15rem;
+      max-width: 760px;
     }
 
-    /* ─── About ──────────────────────────────── */
-    .about-text { font-size: .98rem; line-height: 1.8; }
-    .about-text strong { color: var(--navy); }
+    .about-grid,
+    .contact-grid,
+    .project-grid,
+    .highlights-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    .about-grid {
+      grid-template-columns: 1.4fr 0.9fr;
+      align-items: start;
+    }
+    .about-copy p + p {
+      margin-top: 1rem;
+    }
+    .vision {
+      margin-top: 1rem;
+      padding: 1rem 1.1rem;
+      border-left: 4px solid var(--gold);
+      background: linear-gradient(180deg, rgba(215, 161, 59, 0.12), rgba(215, 161, 59, 0.04));
+      border-radius: 0 16px 16px 0;
+      font-style: italic;
+      color: var(--ink-soft);
+    }
+    .mini-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1rem 1.1rem;
+    }
+    .mini-card h3 {
+      color: var(--ink);
+      font-size: 0.98rem;
+      margin-bottom: 0.65rem;
+    }
+    .mini-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+    .mini-card strong { color: var(--ink); }
 
-    /* ─── Research tags ──────────────────────── */
-    .tags { display: flex; flex-wrap: wrap; gap: .55rem; }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
     .tag {
-      padding: .38rem .85rem; border-radius: 20px;
-      font-size: .875rem; border: 1px solid var(--border);
-      background: var(--white); box-shadow: var(--shadow);
+      padding: 0.6rem 0.95rem;
+      border-radius: 999px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 22px rgba(16, 33, 59, 0.05);
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--ink-soft);
     }
-    .tag.primary { background: var(--teal); border-color: var(--teal); color: #fff; font-weight: 500; }
+    .tag.primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--ink-soft), var(--sky));
+      border-color: transparent;
+    }
 
-    /* ─── Publications ───────────────────────── */
-    .pub-list { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
+    .highlights-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .highlight-card {
+      background: linear-gradient(180deg, #fff 0%, #f8fbff 100%);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 1.2rem;
+    }
+    .highlight-card .kicker {
+      display: inline-block;
+      margin-bottom: 0.7rem;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 800;
+      color: var(--sky);
+    }
+    .highlight-card h3 {
+      color: var(--ink);
+      font-size: 1.05rem;
+      margin-bottom: 0.45rem;
+    }
+    .highlight-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .pub-list {
+      list-style: none;
+      display: grid;
+      gap: 0.9rem;
+    }
     .pub-item {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 8px; padding: 1rem 1.2rem;
-      box-shadow: var(--shadow);
-      display: flex; gap: .9rem; align-items: flex-start;
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 1rem;
+      padding: 1.1rem 1.2rem;
+      background: var(--paper);
+      border-radius: 18px;
+      border: 1px solid var(--line);
     }
     .pub-year {
-      background: var(--navy); color: #fff;
-      font-size: .7rem; font-weight: 700;
-      padding: .22rem .45rem; border-radius: 4px;
-      flex-shrink: 0; margin-top: .2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 2rem;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
     }
-    .pub-title { font-weight: 600; font-size: .93rem; margin-bottom: .15rem; }
-    .pub-authors { font-size: .83rem; color: var(--muted); margin-bottom: .1rem; }
-    .pub-venue { font-size: .83rem; color: var(--muted); font-style: italic; }
-    .pub-links { margin-top: .4rem; display: flex; gap: .6rem; }
+    .pub-title {
+      color: var(--ink);
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+    }
+    .pub-authors,
+    .pub-venue {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 0.6rem;
+    }
     .pub-links a {
-      font-size: .78rem; font-weight: 600;
-      color: var(--teal); text-decoration: none;
-      padding: .15rem .45rem; border: 1px solid var(--teal);
-      border-radius: 4px; transition: all .15s;
+      color: var(--sky);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 800;
+      border: 1px solid rgba(15, 128, 200, 0.25);
+      padding: 0.3rem 0.6rem;
+      border-radius: 999px;
     }
-    .pub-links a:hover { background: var(--teal); color: #fff; }
 
-    /* ─── Projects ───────────────────────────── */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: .85rem;
+    .project-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .project-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 8px; padding: 1rem 1.15rem;
-      box-shadow: var(--shadow); text-decoration: none; color: inherit;
-      display: block; transition: box-shadow .2s, transform .2s;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: linear-gradient(180deg, #ffffff 0%, #f6fafd 100%);
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      padding: 1.25rem;
+      transition: 0.2s ease;
     }
-    .project-card:hover { box-shadow: 0 6px 16px rgba(0,0,0,.12); transform: translateY(-2px); }
-    .project-name { font-weight: 600; font-size: .92rem; color: var(--teal); margin-bottom: .35rem; }
-    .project-desc { font-size: .84rem; color: var(--muted); line-height: 1.55; }
-    .project-lang { margin-top: .6rem; font-size: .77rem; color: var(--muted); display: flex; align-items: center; gap: .3rem; }
-    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    .project-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px rgba(16, 33, 59, 0.08);
+    }
+    .project-name {
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 0.45rem;
+    }
+    .project-desc {
+      color: var(--muted);
+      font-size: 0.92rem;
+      min-height: 5.1rem;
+    }
+    .project-lang {
+      margin-top: 0.9rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
 
-    /* ─── Contact ────────────────────────────── */
     .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-      gap: .75rem;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
     .contact-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 8px; padding: .9rem 1rem; box-shadow: var(--shadow);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1rem 1.05rem;
     }
     .contact-label {
-      font-size: .7rem; color: var(--muted);
-      text-transform: uppercase; letter-spacing: .07em; margin-bottom: .25rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+      font-weight: 800;
     }
-    .contact-value { font-size: .9rem; font-weight: 500; }
-    .contact-value a { color: var(--teal); text-decoration: none; }
-    .contact-value a:hover { text-decoration: underline; }
+    .contact-value,
+    .contact-value a {
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .contact-value a:hover {
+      color: var(--sky);
+    }
 
-    /* ─── Footer ─────────────────────────────── */
     footer {
-      background: var(--navy); color: rgba(255,255,255,.45);
-      text-align: center; padding: 1.5rem 2rem;
-      font-size: .83rem;
+      text-align: center;
+      color: var(--muted);
+      padding: 0 1.5rem 2.6rem;
+      font-size: 0.9rem;
     }
-    footer a { color: rgba(255,255,255,.65); text-decoration: none; }
-    footer a:hover { color: #fff; }
+    footer a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-weight: 700;
+    }
 
-    /* ─── Responsive ─────────────────────────── */
-    @media (max-width: 580px) {
-      .hero-inner   { flex-direction: column; text-align: center; gap: 1.4rem; }
-      .hero-links   { justify-content: center; }
-      .avatar       { width: 100px; height: 100px; font-size: 2.1rem; }
-      .hero-text h1 { font-size: 1.85rem; }
-      .nav-links    { display: none; }
+    @media (max-width: 960px) {
+      .hero-inner,
+      .about-grid,
+      .highlights-grid,
+      .project-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .project-desc {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero {
+        padding-top: 2rem;
+      }
+      .hero-inner {
+        padding: 2rem;
+      }
+      .hero h1 {
+        font-size: 3rem;
+      }
+      .avatar {
+        width: 140px;
+        height: 140px;
+      }
+      .pub-item {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-
-<!-- ═══════════════════ NAVIGATION ═══════════════════ -->
-<nav>
-  <!-- ✏️ EDIT: Your name -->
-  <span class="nav-name">Your Name</span>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- ═══════════════════ HERO ═══════════════════ -->
-<div class="hero">
-  <div class="hero-inner">
-
-    <div class="avatar">
-      <!-- Option A: Initials (default) -->
-      <!-- ✏️ EDIT: Replace "YN" with your initials -->
-      YN
-
-      <!-- Option B: Photo — delete the "YN" above and uncomment this:
-      <img src="assets/photo.jpg" alt="Your Name">
-      Then upload your photo as assets/photo.jpg to the repo. -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-name" href="#top">Yifan Yang</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#highlights">Highlights</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="hero-text">
-      <!-- ✏️ EDIT: Your full name -->
-      <h1>Your Name</h1>
-      <!-- ✏️ EDIT: Your degree and department -->
-      <p class="position">PhD Student · Department of Geography</p>
-      <!-- ✏️ EDIT: Your university and advisor -->
-      <p class="university">Your University &nbsp;·&nbsp; Advisor: Prof. Your Advisor</p>
+  <header class="hero" id="top">
+    <div class="hero-shell">
+      <div class="hero-inner">
+        <div class="avatar">
+          <img src="assets/photo.jpg" alt="Portrait of Yifan Yang">
+        </div>
 
-      <div class="hero-links">
-        <!-- ✏️ EDIT: Update each href. Delete any you don't use. -->
-        <a href="mailto:you@university.edu">✉ Email</a>
-        <a href="https://github.com/your-username" target="_blank">⌥ GitHub</a>
-        <a href="https://scholar.google.com/citations?user=XXXXXXX" target="_blank">◎ Google Scholar</a>
-        <a href="https://twitter.com/your-handle" target="_blank">𝕏 Twitter</a>
-        <a href="assets/cv.pdf" target="_blank">↓ CV</a>
-        <!-- To add a CV: upload your CV as assets/cv.pdf to the repo -->
+        <div class="hero-text">
+          <div class="eyebrow">GeoAI | GIScience | Disaster Resilience</div>
+          <h1>Yifan Yang</h1>
+          <p class="position">PhD Student in Geography</p>
+          <p class="institution">Texas A&amp;M University | Advisor: Dr. Lei Zou</p>
+          <p class="summary">
+            I build responsible and autonomous GeoAI systems for multimodal disaster assessment,
+            cross-view generation, and interpretable spatial intelligence. My work connects
+            satellite imagery, street-view imagery, vision-language models, and geospatial reasoning
+            to support real-world resilience research.
+          </p>
+
+          <div class="hero-links">
+            <a class="primary" href="assets/cv.pdf" target="_blank" rel="noopener">View CV</a>
+            <a href="mailto:yyf990925@gmail.com">Email</a>
+            <a href="https://github.com/rayford295" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://scholar.google.com/citations?user=B-fiSHwAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+            <a href="https://autogeoai4sci.github.io/" target="_blank" rel="noopener">AutoGeoAI4Sci</a>
+          </div>
+
+          <div class="hero-stats">
+            <span>352 citations</span>
+            <span>20+ open repositories</span>
+            <span>Best Student Paper Award, ICC 2025</span>
+          </div>
+        </div>
       </div>
     </div>
+  </header>
 
-  </div>
-</div>
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>
+            I am a PhD student in the Department of Geography at Texas A&amp;M University,
+            where I work with Dr. Lei Zou on GeoAI, multimodal disaster assessment, and
+            spatial intelligence. Before TAMU, I earned an M.S. in Spatial Data Science from
+            the University of Southern California and a B.E. in Software Engineering from
+            Hainan University.
+          </p>
+          <p>
+            My recent work spans bi-temporal street-view disaster assessment, multimodal
+            arbitration with CLIP, satellite-to-street generative modeling, and multi-agent
+            disaster reasoning. I am especially interested in systems that are explainable,
+            reproducible, and useful for decision-making across hazard and resilience settings.
+          </p>
+          <p class="vision">
+            Vision: To transcend the boundaries of screens and make the real world our playground
+            of intelligence, where AI, space, and humanity coexist and co-create.
+          </p>
+        </div>
 
-<!-- ═══════════════════ MAIN CONTENT ═══════════════════ -->
-<main>
+        <div class="mini-card">
+          <h3>Current Snapshot</h3>
+          <ul>
+            <li><strong>Program:</strong> PhD in Geography, Texas A&amp;M University</li>
+            <li><strong>Previous training:</strong> USC Spatial Data Science, Hainan University Software Engineering</li>
+            <li><strong>Current roles:</strong> Graduate Research Assistant, TAMIDS Student Ambassador, AAG student co-director</li>
+            <li><strong>Open-source leadership:</strong> Founder of AutonomousGeoAI4Science</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <!-- ─── About ─── -->
-  <section id="about">
-    <h2>About Me</h2>
-    <!-- ✏️ EDIT: Write 2–3 sentences about yourself -->
-    <p class="about-text">
-      I am a PhD student in the Department of Geography at [Your University], advised by
-      Prof. [Your Advisor]. My research lies at the intersection of
-      <strong>GIScience</strong>, <strong>remote sensing</strong>, and
-      <strong>machine learning</strong>, with a focus on [your specific topic].
-      I am broadly interested in how geospatial AI can help us better understand
-      and respond to [your application domain, e.g., natural hazards / urban change / climate].
+    <section id="research">
+      <h2>Research Interests</h2>
+      <p class="section-intro">
+        My research sits at the intersection of geographic information science, geospatial AI,
+        multimodal foundation models, and disaster resilience.
+      </p>
+      <div class="tags">
+        <span class="tag primary">GIScience</span>
+        <span class="tag primary">GeoAI</span>
+        <span class="tag primary">Disaster Resilience</span>
+        <span class="tag">Responsible GeoAI</span>
+        <span class="tag">Autonomous GeoAI</span>
+        <span class="tag">Spatial Data Science</span>
+        <span class="tag">Generative AI</span>
+        <span class="tag">Multimodal AI</span>
+        <span class="tag">Remote Sensing</span>
+        <span class="tag">Street-View Analytics</span>
+        <span class="tag">Vision-Language Models</span>
+        <span class="tag">Cross-View Synthesis</span>
+      </div>
+    </section>
+
+    <section id="highlights">
+      <h2>Highlights</h2>
+      <div class="highlights-grid">
+        <article class="highlight-card">
+          <span class="kicker">Research</span>
+          <h3>Multimodal disaster intelligence</h3>
+          <p>
+            Developed a portfolio of research systems for hyperlocal damage assessment from
+            bi-temporal street-view imagery, satellite inputs, and vision-language reasoning.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <span class="kicker">Recognition</span>
+          <h3>Award-winning work</h3>
+          <p>
+            Received the ICC 2025 Best Student Paper Award, AAG-GISSG honors recognition,
+            and multiple travel and scholarship awards supporting GeoAI research.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <span class="kicker">Service</span>
+          <h3>Community leadership</h3>
+          <p>
+            Serving in student leadership roles across AAG and TAMIDS while organizing sessions
+            on GeoAI, disaster resilience, and urban environmental intelligence.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Selected Publications</h2>
+      <p class="section-intro">
+        Representative papers and preprints spanning GeoAI, geoprivacy, multimodal disaster
+        assessment, and urban digital twins.
+      </p>
+      <ul class="pub-list">
+        <li class="pub-item">
+          <span class="pub-year">2026</span>
+          <div>
+            <div class="pub-title">DamageArbiter: A CLIP-Enhanced Multimodal Arbitration Framework for Hurricane Damage Assessment from Street-View Imagery</div>
+            <div class="pub-authors"><strong>Yifan Yang</strong>, Lei Zou, Wenjing Gong, Kun Fu, Zhenning Li, Sisi Wang, and collaborators</div>
+            <div class="pub-venue">arXiv preprint, 2026.</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2603.14837" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://github.com/rayford295/DamageArbiter" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2026</span>
+          <div>
+            <div class="pub-title">Satellite-to-Street: Synthesizing Post-Disaster Views from Satellite Imagery via Generative Vision Models</div>
+            <div class="pub-authors"><strong>Yifan Yang</strong>, Lei Zou, and William Jepson</div>
+            <div class="pub-venue">arXiv preprint, 2026.</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2603.20697" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://github.com/rayford295/Sat2Street-DisasterGen" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div>
+            <div class="pub-title">Hyperlocal Disaster Damage Assessment Using Bi-Temporal Street-View Imagery and Pre-Trained Vision Models</div>
+            <div class="pub-authors"><strong>Yifan Yang</strong>, Lei Zou, Bing Zhou, Dongjie Li, Bowen Lin, Jasim Abedin, and Mingyang Yang</div>
+            <div class="pub-venue">Computers, Environment and Urban Systems, 2025.</div>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1016/j.compenvurbsys.2025.102335" target="_blank" rel="noopener">DOI</a>
+              <a href="https://github.com/rayford295/Bi-Temporal-StreetView" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div>
+            <div class="pub-title">Perceiving Multidimensional Disaster Damages from Street-View Images Using Visual-Language Models</div>
+            <div class="pub-authors"><strong>Yifan Yang</strong> and Lei Zou</div>
+            <div class="pub-venue">Abstracts of the ICA, 2025. Best Student Paper Award.</div>
+            <div class="pub-links">
+              <a href="https://doi.org/10.5194/ica-abs-10-310-2025" target="_blank" rel="noopener">DOI</a>
+              <a href="https://github.com/rayford295/DisasterVLP" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div>
+            <div class="pub-title">Object Detection and Segmentation of Trees Using Text SAM in ArcGIS Online</div>
+            <div class="pub-authors"><strong>Yifan Yang</strong> and David Borrelli</div>
+            <div class="pub-venue">In Security First: Geospatial Workflows for a Safe and Equitable World, Esri Press, 2025.</div>
+            <div class="pub-links">
+              <a href="https://github.com/rayford295/ArcGIS-SAM-TreeSegmentation" target="_blank" rel="noopener">Project</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2024</span>
+          <div>
+            <div class="pub-title">GeoLocator: A Location-Integrated Large Multimodal Model for Inferring Geo-Privacy</div>
+            <div class="pub-authors"><strong>Yifan Yang</strong>, Sisi Wang, Dongjie Li, Shaoyang Sun, and Qunying Wu</div>
+            <div class="pub-venue">Applied Sciences, 2024.</div>
+            <div class="pub-links">
+              <a href="https://www.mdpi.com/2076-3417/14/16/7091" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/rayford295/GeoLocator" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Featured Projects</h2>
+      <p class="section-intro">
+        Open-source repositories that reflect my current research direction in GeoAI,
+        reproducible science, and disaster resilience.
+      </p>
+      <div class="project-grid">
+        <a class="project-card" href="https://github.com/rayford295/Sat2Street-DisasterGen" target="_blank" rel="noopener">
+          <div class="project-name">Sat2Street-DisasterGen</div>
+          <div class="project-desc">A multimodal generation framework for synthesizing realistic street-view imagery from satellite inputs in post-disaster scenarios.</div>
+          <div class="project-lang"><span class="dot" style="background:#3572A5"></span>Python</div>
+        </a>
+
+        <a class="project-card" href="https://github.com/rayford295/GeoAgent4Disaster" target="_blank" rel="noopener">
+          <div class="project-name">GeoAgent4Disaster</div>
+          <div class="project-desc">A multi-agent GeoAI framework for multimodal disaster perception, reasoning, and report generation without task-specific retraining.</div>
+          <div class="project-lang"><span class="dot" style="background:#3572A5"></span>Python</div>
+        </a>
+
+        <a class="project-card" href="https://github.com/rayford295/DamageArbiter" target="_blank" rel="noopener">
+          <div class="project-name">DamageArbiter</div>
+          <div class="project-desc">A CLIP-enhanced multimodal arbitration system for robust hurricane damage assessment from street-view imagery.</div>
+          <div class="project-lang"><span class="dot" style="background:#3572A5"></span>Python</div>
+        </a>
+
+        <a class="project-card" href="https://github.com/rayford295/Bi-Temporal-StreetView" target="_blank" rel="noopener">
+          <div class="project-name">Bi-Temporal-StreetView</div>
+          <div class="project-desc">Research code for hyperlocal disaster damage assessment using paired pre- and post-disaster street-view imagery.</div>
+          <div class="project-lang"><span class="dot" style="background:#3572A5"></span>Python</div>
+        </a>
+
+        <a class="project-card" href="https://github.com/rayford295/awesome-autonomous-geoai" target="_blank" rel="noopener">
+          <div class="project-name">awesome-autonomous-geoai</div>
+          <div class="project-desc">A curated collection of resources, tools, and papers focused on autonomous GeoAI and AI4Science.</div>
+          <div class="project-lang"><span class="dot" style="background:#ededed"></span>Curated resources</div>
+        </a>
+
+        <a class="project-card" href="https://github.com/rayford295/Tutorial_SpatialQueryLab" target="_blank" rel="noopener">
+          <div class="project-name">Tutorial_SpatialQueryLab</div>
+          <div class="project-desc">An interactive learning environment that connects ArcGIS services with Supabase and PostGIS for spatial SQL education.</div>
+          <div class="project-lang"><span class="dot" style="background:#e34c26"></span>HTML</div>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-label">Email</div>
+          <div class="contact-value"><a href="mailto:yyf990925@gmail.com">yyf990925@gmail.com</a></div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-label">Location</div>
+          <div class="contact-value">College Station, Texas</div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-label">GitHub</div>
+          <div class="contact-value"><a href="https://github.com/rayford295" target="_blank" rel="noopener">@rayford295</a></div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-label">Google Scholar</div>
+          <div class="contact-value"><a href="https://scholar.google.com/citations?user=B-fiSHwAAAAJ" target="_blank" rel="noopener">Profile</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &copy; 2026 Yifan Yang. Built from the
+      <a href="https://github.com/rayford295/academic-website-template" target="_blank" rel="noopener">academic website template</a>
+      and customized for GitHub Pages.
     </p>
-  </section>
-
-  <!-- ─── Research Interests ─── -->
-  <section id="research">
-    <h2>Research Interests</h2>
-    <div class="tags">
-      <!-- ✏️ EDIT: Replace with your actual research areas.
-           "primary" class = filled teal chip (use for your main 2-3 areas).
-           Remove or add <span> tags freely. -->
-      <span class="tag primary">GIScience</span>
-      <span class="tag primary">GeoAI</span>
-      <span class="tag primary">Remote Sensing</span>
-      <span class="tag">Deep Learning</span>
-      <span class="tag">Natural Hazards</span>
-      <span class="tag">Disaster Resilience</span>
-      <span class="tag">Spatial Analysis</span>
-      <span class="tag">Urban Computing</span>
-      <span class="tag">Foundation Models</span>
-    </div>
-  </section>
-
-  <!-- ─── Publications ─── -->
-  <section id="publications">
-    <h2>Publications</h2>
-    <ul class="pub-list">
-
-      <!-- ✏️ EDIT: Replace with your actual papers.
-           Copy this <li> block to add more publications. -->
-      <li class="pub-item">
-        <span class="pub-year">2025</span>
-        <div>
-          <div class="pub-title">
-            Your Paper Title: A Descriptive Subtitle About Your Contribution
-          </div>
-          <div class="pub-authors">
-            <strong>Your Name</strong>, Co-author One, Co-author Two, Senior Author
-          </div>
-          <div class="pub-venue">
-            <em>Journal of Geophysical Research / AAAI / IGARSS</em>, 2025.
-          </div>
-          <div class="pub-links">
-            <a href="#">PDF</a>
-            <a href="#">DOI</a>
-            <a href="#">Code</a>
-            <a href="#">Slides</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Second publication example -->
-      <li class="pub-item">
-        <span class="pub-year">2024</span>
-        <div>
-          <div class="pub-title">
-            Another Paper Title: A Geospatial Deep Learning Approach
-          </div>
-          <div class="pub-authors">
-            <strong>Your Name</strong>, Co-author
-          </div>
-          <div class="pub-venue">
-            <em>Remote Sensing of Environment</em>, 2024.
-          </div>
-          <div class="pub-links">
-            <a href="#">PDF</a>
-            <a href="#">DOI</a>
-          </div>
-        </div>
-      </li>
-
-    </ul>
-  </section>
-
-  <!-- ─── Projects ─── -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-
-      <!-- ✏️ EDIT: Replace href with your GitHub repo URLs.
-           Copy a .project-card block to add more. -->
-      <a class="project-card" href="https://github.com/your-username/project-one" target="_blank">
-        <div class="project-name">⬡ project-one</div>
-        <div class="project-desc">
-          Short description of what this project does and its research significance.
-        </div>
-        <div class="project-lang">
-          <span class="dot" style="background:#3572A5"></span> Python
-        </div>
-      </a>
-
-      <a class="project-card" href="https://github.com/your-username/project-two" target="_blank">
-        <div class="project-name">⬡ project-two</div>
-        <div class="project-desc">
-          A GIS analysis tool, visualization, or dataset related to your research.
-        </div>
-        <div class="project-lang">
-          <!-- Common language dot colors: Python #3572A5, R #198CE7, JS #f1e05a -->
-          <span class="dot" style="background:#198CE7"></span> R
-        </div>
-      </a>
-
-      <a class="project-card" href="https://github.com/your-username/project-three" target="_blank">
-        <div class="project-name">⬡ project-three</div>
-        <div class="project-desc">
-          Another project — perhaps a tutorial, benchmark dataset, or web tool.
-        </div>
-        <div class="project-lang">
-          <span class="dot" style="background:#f1e05a"></span> JavaScript
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- ─── Contact ─── -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-grid">
-      <!-- ✏️ EDIT: Update your contact details -->
-      <div class="contact-card">
-        <div class="contact-label">Email</div>
-        <div class="contact-value">
-          <a href="mailto:you@university.edu">you@university.edu</a>
-        </div>
-      </div>
-      <div class="contact-card">
-        <div class="contact-label">Office</div>
-        <div class="contact-value">Building Name, Room 000<br>City, State ZIP</div>
-      </div>
-      <div class="contact-card">
-        <div class="contact-label">GitHub</div>
-        <div class="contact-value">
-          <a href="https://github.com/your-username" target="_blank">@your-username</a>
-        </div>
-      </div>
-      <div class="contact-card">
-        <div class="contact-label">Google Scholar</div>
-        <div class="contact-value">
-          <a href="https://scholar.google.com" target="_blank">View Profile →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- ═══════════════════ FOOTER ═══════════════════ -->
-<footer>
-  <!-- ✏️ EDIT: Your name -->
-  <p>
-    © 2026 Your Name &nbsp;·&nbsp;
-    Built with <a href="https://pages.github.com" target="_blank">GitHub Pages</a> &nbsp;·&nbsp;
-    <a href="https://github.com/your-username/your-username.github.io">View source</a>
-  </p>
-</footer>
-
+  </footer>
 </body>
 </html>
