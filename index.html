@@ -352,6 +352,256 @@
       border-radius: 999px;
     }
 
+    .presentation-shell {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+    }
+    .presentation-shell::before,
+    .presentation-shell::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .presentation-shell::before {
+      width: 260px;
+      height: 260px;
+      top: -120px;
+      right: -90px;
+      background: radial-gradient(circle, rgba(15, 128, 200, 0.12), rgba(15, 128, 200, 0));
+    }
+    .presentation-shell::after {
+      width: 220px;
+      height: 220px;
+      bottom: -120px;
+      left: -80px;
+      background: radial-gradient(circle, rgba(215, 161, 59, 0.12), rgba(215, 161, 59, 0));
+    }
+    .presentation-overview {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.3rem;
+      padding: 1.1rem;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(245, 250, 255, 0.96));
+      border: 1px solid rgba(15, 128, 200, 0.12);
+      box-shadow: 0 16px 36px rgba(16, 33, 59, 0.05);
+    }
+    .presentation-overview-copy {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+    .presentation-overview-copy strong {
+      color: var(--ink);
+    }
+    .presentation-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+    .presentation-stat {
+      padding: 0.8rem 0.9rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(15, 128, 200, 0.1);
+    }
+    .presentation-stat-value {
+      color: var(--ink);
+      font-size: 1.05rem;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+    .presentation-stat-label {
+      margin-top: 0.25rem;
+      color: var(--muted);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 800;
+    }
+    .presentation-list {
+      position: relative;
+      z-index: 1;
+      list-style: none;
+      display: grid;
+      gap: 1rem;
+    }
+    .presentation-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 1.2rem;
+      padding: 1.25rem 1.25rem 1.25rem 0;
+    }
+    .presentation-item::before {
+      content: "";
+      position: absolute;
+      left: 45px;
+      top: 0;
+      bottom: -1rem;
+      width: 1px;
+      background: linear-gradient(180deg, rgba(15, 128, 200, 0.28), rgba(16, 33, 59, 0.08));
+    }
+    .presentation-item:last-child::before {
+      bottom: 1.25rem;
+    }
+    .presentation-year {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 92px;
+      height: 2.4rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--ink), var(--sky));
+      color: #fff;
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      box-shadow: 0 12px 24px rgba(16, 33, 59, 0.12);
+    }
+    .presentation-card {
+      position: relative;
+      background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.25rem 1.3rem;
+      box-shadow: 0 12px 30px rgba(16, 33, 59, 0.05);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+    .presentation-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 4px;
+      border-radius: 22px 22px 0 0;
+      background: linear-gradient(90deg, var(--gold), var(--sky));
+      opacity: 0.9;
+    }
+    .presentation-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(16, 33, 59, 0.09);
+      border-color: rgba(15, 128, 200, 0.2);
+    }
+    .presentation-kicker {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.28rem 0.62rem;
+      border-radius: 999px;
+      background: rgba(16, 33, 59, 0.06);
+      color: var(--ink-soft);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+    }
+    .presentation-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .presentation-venue {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--ink);
+    }
+    .presentation-meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+    .presentation-note {
+      color: var(--muted);
+      font-size: 0.93rem;
+      margin-top: 0.2rem;
+      max-width: 62ch;
+    }
+    .presentation-talks {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 0.95rem;
+    }
+    .talk-entry {
+      position: relative;
+      padding: 0.95rem 1rem;
+      border-radius: 16px;
+      background: rgba(238, 244, 251, 0.82);
+      border: 1px solid rgba(15, 128, 200, 0.12);
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+    .talk-entry:hover {
+      background: rgba(243, 249, 255, 0.98);
+      border-color: rgba(15, 128, 200, 0.24);
+      transform: translateX(2px);
+    }
+    .talk-type {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.28rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 128, 200, 0.1);
+      color: var(--sky);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 800;
+      margin-bottom: 0.55rem;
+    }
+    .talk-title {
+      color: var(--ink);
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+    .talk-subtitle {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 0.3rem;
+    }
+    .talk-highlight {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 0.55rem;
+      padding: 0.22rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(215, 161, 59, 0.14);
+      color: #9b6b11;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+    .talk-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.7rem;
+    }
+    .talk-links a {
+      color: var(--sky);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 800;
+      border: 1px solid rgba(15, 128, 200, 0.22);
+      background: rgba(255, 255, 255, 0.86);
+      padding: 0.28rem 0.62rem;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+    .talk-links a:hover {
+      background: rgba(15, 128, 200, 0.08);
+      transform: translateY(-1px);
+    }
+
     .project-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -438,11 +688,20 @@
       .about-grid,
       .highlights-grid,
       .project-grid,
-      .contact-grid {
+      .contact-grid,
+      .presentation-overview,
+      .presentation-summary-grid {
         grid-template-columns: 1fr;
       }
       .project-desc {
         min-height: auto;
+      }
+      .presentation-item {
+        grid-template-columns: 1fr;
+        padding-right: 0;
+      }
+      .presentation-item::before {
+        display: none;
       }
     }
 
@@ -467,6 +726,15 @@
       .pub-item {
         grid-template-columns: 1fr;
       }
+      .presentation-card {
+        padding: 1rem;
+      }
+      .presentation-head {
+        align-items: flex-start;
+      }
+      .presentation-overview {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
@@ -479,6 +747,7 @@
         <li><a href="#research">Research</a></li>
         <li><a href="#highlights">Highlights</a></li>
         <li><a href="#publications">Publications</a></li>
+        <li><a href="#presentations">Presentations</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -696,6 +965,180 @@
           </div>
         </li>
       </ul>
+    </section>
+
+    <section id="presentations">
+      <h2>Presentations</h2>
+      <p class="section-intro">
+        Selected talks, paper sessions, and invited research presentations across GeoAI,
+        GIScience, and disaster resilience communities.
+      </p>
+      <div class="presentation-shell">
+        <div class="presentation-overview">
+          <div class="presentation-overview-copy">
+            Recent presentations span major meetings in GIScience, cartography, spatial data
+            science, and GeoAI. Together they reflect a research trajectory centered on
+            <strong>multimodal disaster assessment</strong>, <strong>geospatial intelligence</strong>,
+            and <strong>community-facing scholarly engagement</strong>.
+          </div>
+          <div class="presentation-summary-grid">
+            <div class="presentation-stat">
+              <div class="presentation-stat-value">4</div>
+              <div class="presentation-stat-label">Years / Groups</div>
+            </div>
+            <div class="presentation-stat">
+              <div class="presentation-stat-value">9+</div>
+              <div class="presentation-stat-label">Talks & Sessions</div>
+            </div>
+            <div class="presentation-stat">
+              <div class="presentation-stat-value">ICC 2025</div>
+              <div class="presentation-stat-label">Award Highlight</div>
+            </div>
+          </div>
+        </div>
+
+        <ul class="presentation-list">
+          <li class="presentation-item">
+            <span class="presentation-year">2026</span>
+            <article class="presentation-card">
+              <div class="presentation-kicker">Conference Portfolio</div>
+              <div class="presentation-head">
+                <div class="presentation-venue">AAG Annual Meeting</div>
+                <div class="presentation-meta">San Francisco, California | March 17-21, 2026</div>
+              </div>
+              <p class="presentation-note">
+                A strong recent cluster of contributions centered on GeoAI, disaster resilience,
+                and spatial intelligence communities.
+              </p>
+              <div class="presentation-talks">
+                <div class="talk-entry">
+                  <div class="talk-type">Annual Meeting</div>
+                  <div class="talk-title">Organized and contributed to multiple AAG 2026 sessions on GeoAI, disaster resilience, and spatial intelligence.</div>
+                  <div class="talk-links">
+                    <a href="https://aag.secure-platform.com/a/solicitations/46/sessiongallery/90541/application/25333" target="_blank" rel="noopener">Session 90541</a>
+                    <a href="https://aag.secure-platform.com/a/solicitations/46/sessiongallery/24774/application/25413" target="_blank" rel="noopener">Session 24774</a>
+                    <a href="https://aag.secure-platform.com/a/solicitations/46/sessiongallery/25683/application/25257" target="_blank" rel="noopener">Session 25683</a>
+                    <a href="https://aag.secure-platform.com/a/solicitations/46/sessiongallery/25338" target="_blank" rel="noopener">Session 25338</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="presentation-item">
+            <span class="presentation-year">2025</span>
+            <article class="presentation-card">
+              <div class="presentation-kicker">Award-Winning Research</div>
+              <div class="presentation-head">
+                <div class="presentation-venue">International Cartographic Conference (ICC)</div>
+                <div class="presentation-meta">Vancouver, Canada | August 17-22, 2025</div>
+              </div>
+              <p class="presentation-note">
+                A focused set of presentations around vision-language methods for
+                multidimensional disaster damage assessment.
+              </p>
+              <div class="presentation-talks">
+                <div class="talk-entry">
+                  <div class="talk-type">Student Paper Session</div>
+                  <div class="talk-title">Perceiving Multidimensional Disaster Damages from Street-View Images Using Visual-Language Models</div>
+                  <div class="talk-subtitle"><strong>Yifan Yang</strong></div>
+                  <div class="talk-highlight">Best Student Paper Award</div>
+                </div>
+                <div class="talk-entry">
+                  <div class="talk-type">Pre-conference Symposium</div>
+                  <div class="talk-title">DisasterVLP: A Vision-Language Pretrained Framework for Multidimensional Disaster Damage Assessment Using Street-View Images</div>
+                  <div class="talk-subtitle"><strong>Yifan Yang</strong> and Lei Zou</div>
+                  <div class="talk-links">
+                    <a href="https://icc2025.com/program/geospatial-analytics-for-sustainable-and-livable-cities/" target="_blank" rel="noopener">Symposium Page</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="presentation-item">
+            <span class="presentation-year">2025</span>
+            <article class="presentation-card">
+              <div class="presentation-kicker">Conference Activity</div>
+              <div class="presentation-head">
+                <div class="presentation-venue">AAG Annual Meeting</div>
+                <div class="presentation-meta">Detroit, Michigan | March 24-28, 2025</div>
+              </div>
+              <p class="presentation-note">
+                A multi-session conference presence spanning geoprivacy, multimodal spatial
+                intelligence, and broader GeoAI themes.
+              </p>
+              <div class="presentation-talks">
+                <div class="talk-entry">
+                  <div class="talk-type">Annual Meeting</div>
+                  <div class="talk-title">Contributed presentations and sessions spanning GeoAI, geoprivacy, and multimodal spatial intelligence.</div>
+                  <div class="talk-links">
+                    <a href="https://aag.secure-platform.com/a/solicitations/39/sessiongallery/23561/application/23718" target="_blank" rel="noopener">Session 23561</a>
+                    <a href="https://aag.secure-platform.com/a/solicitations/39/sessiongallery/82104" target="_blank" rel="noopener">Session 82104</a>
+                    <a href="https://aag.secure-platform.com/a/solicitations/39/sessiongallery/83465" target="_blank" rel="noopener">Session 83465</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="presentation-item">
+            <span class="presentation-year">2024</span>
+            <article class="presentation-card">
+              <div class="presentation-kicker">Selected Talks</div>
+              <div class="presentation-head">
+                <div class="presentation-venue">Selected Symposia and Summit Talks</div>
+                <div class="presentation-meta">Washington, DC, Los Angeles, and Virtual | 2024</div>
+              </div>
+              <p class="presentation-note">
+                A wider cross-section of workshop, symposium, and summit activity before the more
+                concentrated conference portfolio in 2025-2026.
+              </p>
+              <div class="presentation-talks">
+                <div class="talk-entry">
+                  <div class="talk-type">AAG Annual Meeting</div>
+                  <div class="talk-title">Presented at the AAG Annual Meeting in Honolulu, Hawai'i.</div>
+                  <div class="talk-links">
+                    <a href="https://aag.secure-platform.com/a/solicitations/35/sessiongallery/7825" target="_blank" rel="noopener">Session 7825</a>
+                  </div>
+                </div>
+                <div class="talk-entry">
+                  <div class="talk-type">Spatial Data Science Symposium</div>
+                  <div class="talk-title">Geoprivacy Challenges and Solutions in the Digital Society</div>
+                  <div class="talk-links">
+                    <a href="https://gis.usc.edu/geoprivacy-challenges-and-solutions-in-the-digital-society/" target="_blank" rel="noopener">Session Details</a>
+                    <a href="https://www.youtube.com/watch?v=Np8p0gy2x1E" target="_blank" rel="noopener">Watch Video</a>
+                  </div>
+                </div>
+                <div class="talk-entry">
+                  <div class="talk-type">Pre-symposium Workshop</div>
+                  <div class="talk-title">Spatiotemporal Data Science Symposium Training Workshop</div>
+                  <div class="talk-subtitle">Washington, DC | July 22, 2024</div>
+                  <div class="talk-links">
+                    <a href="https://stsds.org/" target="_blank" rel="noopener">Event Page</a>
+                  </div>
+                </div>
+                <div class="talk-entry">
+                  <div class="talk-type">AGI Leap Summit</div>
+                  <div class="talk-title">Multimodality</div>
+                  <div class="talk-subtitle">Paper Presentation | SuperAGI | February 29, 2024</div>
+                  <div class="talk-links">
+                    <a href="https://superagi.com/agi-leap-summit/" target="_blank" rel="noopener">Summit Website</a>
+                  </div>
+                </div>
+                <div class="talk-entry">
+                  <div class="talk-type">Los Angeles Geospatial Summit</div>
+                  <div class="talk-title">2024 Los Angeles Geospatial Summit</div>
+                  <div class="talk-subtitle">Los Angeles, California | February 23, 2024</div>
+                  <div class="talk-links">
+                    <a href="https://today.usc.edu/usc-spatial-sciences-institute-2024-los-angeles-geospatial-summit/" target="_blank" rel="noopener">Event Article</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <section id="projects">
